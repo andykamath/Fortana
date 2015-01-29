@@ -1,7 +1,7 @@
 <?php
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-    $a = $_REQUEST['Body'];
+    $a = strtolower($_REQUEST['Body']);
     if($a == "weather")
     {
         $city = substr($end, 11);
