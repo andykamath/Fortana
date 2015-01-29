@@ -2,7 +2,7 @@
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     $a = $_REQUEST['Body'];
-    if(strpos($a, "weather")==true)
+    if(strpos($a, "weather")!==false)
     {
         $city = substr($end, 11);
         $country = "US";
