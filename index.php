@@ -1,8 +1,5 @@
 <?php
     header("content-type: text/xml");
-    require('wordnik/Swagger.php');
-    $myAPIKey = 'YOUR KEY GOES HERE';
-    $client = new APIClient($myAPIKey, 'http://api.wordnik.com/v4');
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     $a = strtolower($_REQUEST['Body']);
     if (strpos($a, 'weather') !== false)
