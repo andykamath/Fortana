@@ -2,7 +2,7 @@
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     $a = strtolower($_REQUEST['Body']);
-    if($a == "weather")
+    if (strpos($a, 'weather') !== false)
     {
         $city = substr($end, 11);
         $country = "US";
@@ -13,7 +13,7 @@
         $temp = $temp* 2 + 32.00;
         $end = $data['weather'][0]['description']." and the temperature is ".$temp;
     }
-    if (strpos($a, 'a') !== false)
+    else if (strpos($a, 'define ') !== false)
     {
         $end = $a;
     }
