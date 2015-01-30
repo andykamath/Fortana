@@ -19,7 +19,7 @@
         $url = "http://api.wordnik.com/v4/word.json/".$word."/definitions?limit=1&includeRelated=true&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
         $json=file_get_contents($url);
         $data = json_decode($json, true);
-        $def = $data['text'];
+        $def = $data[0]['text'];
         $end = "The definition of ".$word." is ".$def;
     }
     else
