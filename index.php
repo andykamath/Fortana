@@ -10,7 +10,7 @@
         $json=file_get_contents($url);
         $data=json_decode($json,true);
         $temp = floatval($data['main']['temp']);
-        $temp = ($temp - 273.15)* 1.8000 + 32.00;
+        $temp = $temp* 2 + 32.00;
         $end = $data['weather'][0]['description']." and the temperature is ".$temp;
     }
     else
