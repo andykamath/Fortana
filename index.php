@@ -9,7 +9,8 @@
         $url="http://api.openweathermap.org/data/2.5/weather?q=Charlotte,US&units=metric&cnt=7&lang=en";
         $json=file_get_contents($url);
         $data=json_decode($json,true);
-        $temp=$data['main']['temp'];
+        $temp = floatval($data['main']['temp']);
+        $temp = ($temp - 273.15)* 1.8000 + 32.00;
         $end = $data['weather'][0]['description']." and the temperature is ".$temp;
     }
     else
