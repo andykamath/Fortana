@@ -1,5 +1,4 @@
 <?php
-    require('wordnik/Swagger.php');
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     $a = strtolower($_REQUEST['Body']);
@@ -13,12 +12,6 @@
         $temp = floatval($data['main']['temp']);
         $temp = $temp* 2 + 32.00;
         $end = $data['weather'][0]['description']." and the temperature is ".$temp;
-    }
-    $pos = strpos($a, 'define ');
-    if($pos !== false)
-    {
-        $word = substr($a, 7);
-        $end = $word;
     }
     else
     {
