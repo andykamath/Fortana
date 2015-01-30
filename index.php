@@ -13,6 +13,10 @@
         $temp = $temp* 2 + 32.00;
         $end = $data['weather'][0]['description']." and the temperature is ".$temp;
     }
+    if (strpos($a, 'a') !== false)
+    {
+        $end = $a;
+    }
     else
     {
         $end = "Oops something went wrong";
