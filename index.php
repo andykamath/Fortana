@@ -20,7 +20,7 @@
         $json=file_get_contents($url);
         $data = json_decode($json, true);
         $def = $data[0]['text'];
-        $end = "The definition of ".$word." is ".$def;
+        $end = $def;
     }
     else
     {
