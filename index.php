@@ -22,9 +22,20 @@
         $def = $data[0]['text'];
         $end = $def;
     }
+    else if (strpos($a, 'calc ') !== false)
+    {
+        $end = calculate_string(substr($a, 5));
+    }
     else
     {
         $end = "Oops something went wrong";
+    }
+    function calculate_string( $mathString )    {
+        $mathString = trim($mathString);     // trim white spaces
+        $mathString = ereg_replace ('[^0-9\+-\*\/\(\) ]', '', $mathString); 
+
+        $compute = create_function("", "return (" . $mathString . ");" );
+        return 0 + $compute();
     }
 ?>
 <Response>
