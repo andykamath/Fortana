@@ -1,4 +1,5 @@
 <?php
+    require('./wordnik/Swagger.php');
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     $a = strtolower($_REQUEST['Body']);
@@ -17,11 +18,7 @@
     if($pos !== false)
     {
         $word = substr($a, 7);
-        $url = "http://api.wordnik.com/v4/word.json/".$word."/definitions?limit=200&includeRelated=true&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5"
-        $json = file_get_contents($url);
-        $data=json_decode($json, true);
-        $definition = $data['text'];
-        $end = "The definition of ".$word." is ".$definition;
+        $end = $word;
     }
     else
     {
