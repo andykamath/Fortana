@@ -15,7 +15,7 @@
     }
     else if (strpos($a, 'define ') !== false)
     {
-        $end = $a;
+        $end = substr($a, 7);
     }
     else
     {
