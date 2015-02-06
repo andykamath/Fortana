@@ -29,7 +29,8 @@
     }
     else if (strpos($a, 'who is') !== false) {
         $word = substr($a, 7);
-        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$word."&format=plaintext&podtitle=Notable%20facts";
+        $final = str_replace(" ", "%20", $word);
+        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Notable%20facts";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         ob_start();
