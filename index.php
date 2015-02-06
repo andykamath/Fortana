@@ -42,7 +42,7 @@
             $x = explode($c,$y[1]);
             return $x[0];
         }
-        echo get($contents,'<plaintext>','</plaintext>');
+        $end = get($contents,'<plaintext>','</plaintext>');
 
     }
     else
