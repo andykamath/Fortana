@@ -1,12 +1,19 @@
 <?php
-  include '../wa_wrapper/WolframAlphaEngine.php';
-  $request = 'http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=albert%20einstein&format=html';
+$url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=Albert%20Einstein&format=plaintext&podtitle=Notable%20facts";
 
-  $curl = curl_init();
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($curl, CURLOPT_URL, $request);
-  $response = curl_exec($curl);
-  curl_close($curl);
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+ob_start();
+curl_exec($ch);
+curl_close($ch);
+$contents = ob_get_contents();
+ob_end_clean();
 
-  echo $response;
+function get($a,$b,$c){
+     $y = explode($b,$a);
+     $x = explode($c,$y[1]);
+    return $x[0];
+}
+
+echo get($contents,'<plaintext>','</plaintext>');
 ?>
