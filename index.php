@@ -63,6 +63,42 @@
         }
         $end = get($contents,'<plaintext>','</plaintext>');
     }
+    else if (strpos($a, 'what is ') !== false) {
+        $word = substr($a, 8);
+        $final = str_replace(" ", "%20", $word);
+        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Definitions";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        ob_start();
+        curl_exec($ch);
+        curl_close($ch);
+        $contents = ob_get_contents();
+        ob_end_clean();
+        function get($a,$b,$c){
+            $y = explode($b,$a);
+            $x = explode($c,$y[1]);
+            return $x[0];
+        }
+        $end = get($contents,'<plaintext>','</plaintext>');
+    }
+    else if (strpos($a, 'what was ') !== false) {
+        $word = substr($a, 8);
+        $final = str_replace(" ", "%20", $word);
+        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Definitions";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        ob_start();
+        curl_exec($ch);
+        curl_close($ch);
+        $contents = ob_get_contents();
+        ob_end_clean();
+        function get($a,$b,$c){
+            $y = explode($b,$a);
+            $x = explode($c,$y[1]);
+            return $x[0];
+        }
+        $end = get($contents,'<plaintext>','</plaintext>');
+    }
     else
     {
         $end = "Oops something went wrong";
