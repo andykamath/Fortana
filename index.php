@@ -40,7 +40,7 @@
         <div class="jumbotron" id="hide">
             <div class="container">
                 <h1 class="animated fadeIn">Try it out!</h1>
-                <form action="post" >
+                <div class="appfeds-widget" style="width: 400px; height: 90px; text-align: left;"></div><script type="text/javascript" src="http://www.appfeds.com/api/widget/US/enflick/textnow/"></script>
             </div>
         </div>
         <script type="text/javascript">
