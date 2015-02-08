@@ -1,0 +1,29 @@
+@import url(animate.css);
+@import url(bootstrap.css);
+@import url(font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Muli);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(metro-bootstrap.min.css);
+
+@-webkit-keyframes puls { 0% {background-color: black; color:red;} 50% {background-color: red; color:black;} 100% {background-color: black; color:red;} }
+
+
+html,body
+{
+	height: 100%;
+	background: black
+}
+
+.jumbotron
+{
+	height: 100%;
+	margin-bottom: 0;
+	background: #FFF;
+}
+
+#hide
+{
+	background: black;
+	color: #FFF
+}
