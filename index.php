@@ -11,7 +11,7 @@
         $data=json_decode($json,true);
         $temp = intval($data['main']['temp']);
         $temp = $temp* 2 + 32.00;
-        $end = $data['weather'][0]['description']." and the temperature is ".$temp;
+        $end = $data['weather'][0]['description']." and the temperature is ".$temp."\n\nSource: Weather Underground";
     }
     else if (strpos($a, 'define ') !== false)
     {
@@ -20,7 +20,7 @@
         $json=file_get_contents($url);
         $data = json_decode($json, true);
         $def = $data[0]['text'];
-        $end = $def;
+        $end = $def+"\n\nSource: Wordnik"
     }
     else if (strpos($a, 'calc ') !== false)
     {
@@ -42,7 +42,7 @@
             $x = explode($c,$y[1]);
             return $x[0];
         }
-        $end = get($contents,'<plaintext>','</plaintext>');
+        $end = get($contents,'<plaintext>','</plaintext>')+"\n\nSource: Wolfram Alpha";
     }
     else if (strpos($a, 'who was') !== false) {
         $word = substr($a, 8);
@@ -60,7 +60,7 @@
             $x = explode($c,$y[1]);
             return $x[0];
         }
-        $end = get($contents,'<plaintext>','</plaintext>');
+        $end = get($contents,'<plaintext>','</plaintext>')+"\n\nSource: Wolfram Alpha";
     }
     else if (strpos($a, 'what is ') !== false) {
         $word = substr($a, 8);
@@ -78,7 +78,7 @@
             $x = explode($c,$y[1]);
             return $x[0];
         }
-        $end = get($contents,'<plaintext>','</plaintext>');
+        $end = get($contents,'<plaintext>','</plaintext>')+"\n\nSource: Wolfram Alpha";
     }
     else if (strpos($a, 'what was ') !== false) {
         $word = substr($a, 8);
@@ -96,7 +96,7 @@
             $x = explode($c,$y[1]);
             return $x[0];
         }
-        $end = get($contents,'<plaintext>','</plaintext>');
+        $end = get($contents,'<plaintext>','</plaintext>')+"\n\nSource: Wolfram Alpha";
     }
     else
     {
