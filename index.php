@@ -100,9 +100,8 @@
     }
     else
     {
-        $end = "Oops something went wrong. I currently only do commands such as \"define {{word}}\", \"Weather\", \"Who is {{famous person}}\", and \"What is {{thing}}\". Please contact Andy Kamath to bug him for more stuff";
+        $end = "Oops something went wrong";
     }
-
     function calculate_string( $mathString )    {
         $mathString = trim($mathString);     // trim white spaces
         $mathString = ereg_replace ('[^0-9\+-\*\/\(\) ]', '', $mathString); 
