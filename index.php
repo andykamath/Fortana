@@ -42,7 +42,7 @@
             $x = explode($c,$y[1]);
             return $x[0];
         }
-        $end = get($contents,'<plaintext>','</plaintext>')+"\n\nSource: Wolfram Alpha";
+        $end = get($contents,'<plaintext>','</plaintext>')."\n\nSource: Wolfram Alpha";
     }
     else if (strpos($a, 'who was') !== false) {
         $word = substr($a, 8);
@@ -60,7 +60,7 @@
             $x = explode($c,$y[1]);
             return $x[0];
         }
-        $end = get($contents,'<plaintext>','</plaintext>')+"\n\nSource: Wolfram Alpha";
+        $end = get($contents,'<plaintext>','</plaintext>')."\n\nSource: Wolfram Alpha";
     }
     else if (strpos($a, 'what is ') !== false) {
         $word = substr($a, 8);
@@ -78,7 +78,7 @@
             $x = explode($c,$y[1]);
             return $x[0];
         }
-        $end = get($contents,'<plaintext>','</plaintext>')+"\n\nSource: Wolfram Alpha";
+        $end = get($contents,'<plaintext>','</plaintext>')."\n\nSource: Wolfram Alpha";
     }
     else if (strpos($a, 'what was ') !== false) {
         $word = substr($a, 8);
@@ -96,7 +96,7 @@
             $x = explode($c,$y[1]);
             return $x[0];
         }
-        $end = get($contents,'<plaintext>','</plaintext>')+"\n\nSource: Wolfram Alpha";
+        $end = get($contents,'<plaintext>','</plaintext>')."\n\nSource: Wolfram Alpha";
     }
     else
     {
