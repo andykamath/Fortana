@@ -100,7 +100,7 @@
     }
     else if (strpos($a, 'school') !== false)
     {
-        $end="So far, CMS has not declared that there will not be school tomorrow.";
+        $end = "So far CMS has not changed any plans, so yes";
     }
     else
     {
