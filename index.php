@@ -98,7 +98,7 @@
         }
         $end = get($contents,'<plaintext>','</plaintext>')."\n\nSource: Wolfram Alpha";
     }
-    else if (strpos($a, 'school') !== false && strpos($a, 'tomorrow') !== false)
+    else if (strpos($a, 'school') !== false)
     {
         $end="So far, CMS has not declared that there will not be school tomorrow.";
     }
