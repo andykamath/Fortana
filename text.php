@@ -100,7 +100,7 @@
     }
     else if (strpos($a, 'school') !== false)
     {
-        $end = "CMS has cancelled school for February 16, 2015";
+        $end = "CMS has cancelled school for February 17, 2015";
     }
     else
     {
