@@ -2,6 +2,10 @@
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     $a = strtolower($_REQUEST['Body']);
+    if (strpos($a, 'andy') !== false || strpos($a, 'baendy') !== false || strpos($a, 'baesed') !== false || strpos($a, 'based') !== false)
+    {
+        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the swaggest person to walk this Earth. I don't think you can handle his awesomeness";
+    }
     if (strpos($a, 'weather') !== false)
     {
         $city = substr($end, 11);
