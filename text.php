@@ -98,6 +98,10 @@
         }
         $end = get($contents,'<plaintext>','</plaintext>');
     }
+    else if (strpos($a, 'school') !== false)
+    {
+        $end = "CMS has cancelled school for February 16, 2015";
+    }
     else
     {
         $end = "Oops something went wrong";
