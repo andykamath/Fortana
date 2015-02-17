@@ -100,7 +100,7 @@
     }
     else if (strpos($a, 'school') !== false)
     {
-        $end = "So far CMS has not changed any plans, so yes"
+        $end = "CMS has cancelled school for February 16, 2015";
     }
     else
     {
