@@ -4,19 +4,23 @@
     $a = strtolower($_REQUEST['Body']);
     if (strpos($a, 'andy') !== false)
     {
-        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the swaggest person to walk this Earth. I don't think you can handle his awesomeness";
+        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
     }
     else if (strpos($a, 'based') !== false)
     {
-        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the swaggest person to walk this Earth. I don't think you can handle his awesomeness";
+        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
+    }
+    else if (strpos($a, 'savage') !== false)
+    {
+        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
     }
     else if(strpos($a, 'baendy') !== false)
     {
-        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the swaggest person to walk this Earth. I don't think you can handle his awesomeness";
+        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
     }
     else if(strpos($a, 'bae') !== false)
     {
-        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the swaggest person to walk this Earth. I don't think you can handle his awesomeness";
+        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
     }
     else if(strpos($a, 'swag') !== false)
     {
