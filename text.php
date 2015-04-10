@@ -6,7 +6,128 @@
     {
         $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
     }
-                if ($a == "hi" || $a == "hey" || $a == "hello" || $a == "bonjour" || $a == "namaste" || $a == "hola" || contains("annyong",$a) !== false)
+            
+    else if (strpos($a, 'based') !== false)
+    {
+        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
+    }
+    else if (strpos($a, 'savage') !== false)
+    {
+        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
+    }
+    else if(strpos($a, 'baendy') !== false)
+    {
+        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
+    }
+    else if(strpos($a, 'bae') !== false)
+    {
+        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
+    }
+    else if(strpos($a, 'swag') !== false)
+    {
+        $end = "Swag can be seen in Andy Kamath. No further explanation needed";
+    }
+    else if (strpos($a, 'weather') !== false)
+    {
+        $city = substr($end, 11);
+        $country = "US";
+        $url="http://api.openweathermap.org/data/2.5/weather?q=Charlotte,US&units=metric&cnt=7&lang=en";
+        $json=file_get_contents($url);
+        $data=json_decode($json,true);
+        $temp = intval($data['main']['temp']);
+        $temp = $temp* 2 + 32.00;
+        $end = $data['weather'][0]['description']." and the temperature is ".$temp;
+    }
+    else if (strpos($a, 'define ') !== false)
+    {
+        $word = substr($a, 7);
+        $url = "http://api.wordnik.com/v4/word.json/".$word."/definitions?limit=1&includeRelated=true&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
+        $json=file_get_contents($url);
+        $data = json_decode($json, true);
+        $def = $data[0]['text'];
+        $end = $def;
+    }
+    else if (strpos($a, 'calc ') !== false)
+    {
+        $end = calculate_string(substr($a, 5));
+    }
+    else if (strpos($a, 'who is') !== false) {
+        $word = substr($a, 7);
+        $final = str_replace(" ", "%20", $word);
+        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Notable%20facts";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        ob_start();
+        curl_exec($ch);
+        curl_close($ch);
+        $contents = ob_get_contents();
+        ob_end_clean();
+        function get($a,$b,$c){
+            $y = explode($b,$a);
+            $x = explode($c,$y[1]);
+            return $x[0];
+        }
+        $end = get($contents,'<plaintext>','</plaintext>');
+    }
+    else if (strpos($a, 'who was') !== false) {
+        $word = substr($a, 8);
+        $final = str_replace(" ", "%20", $word);
+        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Notable%20facts";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        ob_start();
+        curl_exec($ch);
+        curl_close($ch);
+        $contents = ob_get_contents();
+        ob_end_clean();
+        function get($a,$b,$c){
+            $y = explode($b,$a);
+            $x = explode($c,$y[1]);
+            return $x[0];
+        }
+        $end = get($contents,'<plaintext>','</plaintext>');
+    }
+    else if (strpos($a, 'what is ') !== false) {
+        $word = substr($a, 8);
+        $final = str_replace(" ", "%20", $word);
+        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Definitions";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        ob_start();
+        curl_exec($ch);
+        curl_close($ch);
+        $contents = ob_get_contents();
+        ob_end_clean();
+        function get($a,$b,$c){
+            $y = explode($b,$a);
+            $x = explode($c,$y[1]);
+            return $x[0];
+        }
+        $end = get($contents,'<plaintext>','</plaintext>');
+    }
+    else if (strpos($a, 'what was ') !== false) {
+        $word = substr($a, 8);
+        $final = str_replace(" ", "%20", $word);
+        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Definitions";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        ob_start();
+        curl_exec($ch);
+        curl_close($ch);
+        $contents = ob_get_contents();
+        ob_end_clean();
+        function get($a,$b,$c){
+            $y = explode($b,$a);
+            $x = explode($c,$y[1]);
+            return $x[0];
+        }
+        $end = get($contents,'<plaintext>','</plaintext>');
+    }
+    else if (strpos($a, 'school') !== false)
+    {
+        $end = "CMS has cancelled school today, February 17, 2015 as well as tomorrow, February 18";
+    }
+        if ($a == "hi" || $a == "hey" || $a == "hello" || $a == "bonjour" || $a == "namaste" || $a == "hola" || contains("annyong",$a) !== false)
             {
                 $end = "Hey!"
             }
@@ -140,18 +261,7 @@
                 $end = "I go to South Charlotte Middle School...";
                 
             }
-            else if (contains("what",$a) !== false && contains("you",$a) !== false && contains("favorite",$a) !== false && contains("subject",$a) !== false)
-            {
-                $end = "My favorite subject would have to be...Science"
-;
-                $end = "How about you?  "
-;
-                Console.Write(">>"
-;
-                Console.ReadLine();
-                $end = Cool());
-                
-            }
+            
             else if (contains("who",$a) !== false && contains("you",$a) !== false && contains("favorite",$a) !== false && contains("teacher",$a) !== false)
             {
                 $end = "My favorite teacher would have to be...Mr. Brown!";
@@ -203,126 +313,6 @@
                 
             }
             
-    else if (strpos($a, 'based') !== false)
-    {
-        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
-    }
-    else if (strpos($a, 'savage') !== false)
-    {
-        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
-    }
-    else if(strpos($a, 'baendy') !== false)
-    {
-        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
-    }
-    else if(strpos($a, 'bae') !== false)
-    {
-        $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
-    }
-    else if(strpos($a, 'swag') !== false)
-    {
-        $end = "Swag can be seen in Andy Kamath. No further explanation needed";
-    }
-    else if (strpos($a, 'weather') !== false)
-    {
-        $city = substr($end, 11);
-        $country = "US";
-        $url="http://api.openweathermap.org/data/2.5/weather?q=Charlotte,US&units=metric&cnt=7&lang=en";
-        $json=file_get_contents($url);
-        $data=json_decode($json,true);
-        $temp = intval($data['main']['temp']);
-        $temp = $temp* 2 + 32.00;
-        $end = $data['weather'][0]['description']." and the temperature is ".$temp;
-    }
-    else if (strpos($a, 'define ') !== false)
-    {
-        $word = substr($a, 7);
-        $url = "http://api.wordnik.com/v4/word.json/".$word."/definitions?limit=1&includeRelated=true&useCanonical=false&includeTags=false&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
-        $json=file_get_contents($url);
-        $data = json_decode($json, true);
-        $def = $data[0]['text'];
-        $end = $def;
-    }
-    else if (strpos($a, 'calc ') !== false)
-    {
-        $end = calculate_string(substr($a, 5));
-    }
-    else if (strpos($a, 'who is') !== false) {
-        $word = substr($a, 7);
-        $final = str_replace(" ", "%20", $word);
-        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Notable%20facts";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        ob_start();
-        curl_exec($ch);
-        curl_close($ch);
-        $contents = ob_get_contents();
-        ob_end_clean();
-        function get($a,$b,$c){
-            $y = explode($b,$a);
-            $x = explode($c,$y[1]);
-            return $x[0];
-        }
-        $end = get($contents,'<plaintext>','</plaintext>');
-    }
-    else if (strpos($a, 'who was') !== false) {
-        $word = substr($a, 8);
-        $final = str_replace(" ", "%20", $word);
-        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Notable%20facts";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        ob_start();
-        curl_exec($ch);
-        curl_close($ch);
-        $contents = ob_get_contents();
-        ob_end_clean();
-        function get($a,$b,$c){
-            $y = explode($b,$a);
-            $x = explode($c,$y[1]);
-            return $x[0];
-        }
-        $end = get($contents,'<plaintext>','</plaintext>');
-    }
-    else if (strpos($a, 'what is ') !== false) {
-        $word = substr($a, 8);
-        $final = str_replace(" ", "%20", $word);
-        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Definitions";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        ob_start();
-        curl_exec($ch);
-        curl_close($ch);
-        $contents = ob_get_contents();
-        ob_end_clean();
-        function get($a,$b,$c){
-            $y = explode($b,$a);
-            $x = explode($c,$y[1]);
-            return $x[0];
-        }
-        $end = get($contents,'<plaintext>','</plaintext>');
-    }
-    else if (strpos($a, 'what was ') !== false) {
-        $word = substr($a, 8);
-        $final = str_replace(" ", "%20", $word);
-        $url = "http://api.wolframalpha.com/v2/query?appid=UHAP2X-235A2GLHLQ&input=".$final."&format=plaintext&podtitle=Definitions";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        ob_start();
-        curl_exec($ch);
-        curl_close($ch);
-        $contents = ob_get_contents();
-        ob_end_clean();
-        function get($a,$b,$c){
-            $y = explode($b,$a);
-            $x = explode($c,$y[1]);
-            return $x[0];
-        }
-        $end = get($contents,'<plaintext>','</plaintext>');
-    }
-    else if (strpos($a, 'school') !== false)
-    {
-        $end = "CMS has cancelled school today, February 17, 2015 as well as tomorrow, February 18";
-    }
     else
     {
         $end = "Oops something went wrong";
