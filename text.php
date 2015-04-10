@@ -137,6 +137,17 @@
         $compute = create_function("", "return (" . $mathString . ");" );
         return 0 + $compute();
     }
+    function contains($needle, $haystack)
+    {
+        if(strpos($haystack,$needle)!==false)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 ?>
 <Response>
     <Message><?php echo $end; ?></Message>
