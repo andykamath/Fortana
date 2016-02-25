@@ -2,6 +2,7 @@
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     $a = strtolower($_REQUEST['Body']);
+    $end = "Oops something went wrong";
     if (strpos($a, 'andy') !== false)
     {
         $end = "Andy Kamath, aka \"Baendy\" or \"Baesed Andy\" is the most savage person to walk this Earth. I don't think you can handle his awesomeness";
@@ -31,12 +32,12 @@
     {
         $city = substr($end, 11);
         $country = "US";
-        $url="http://api.openweathermap.org/data/2.5/weather?q=Charlotte,US&units=metric&cnt=7&lang=en";
+        $url="http://api.openweathermap.org/data/2.5/weather?q=Boone,US&units=metric&cnt=7&lang=en";
         $json=file_get_contents($url);
         $data=json_decode($json,true);
         $temp = intval($data['main']['temp']);
         $temp = $temp* 2 + 32.00;
-        $end = $data['weather'][0]['description']." and the temperature is ".$temp;
+        $end = "The temperature in Boone, NC is ".$temp.". Please do not ask again for ten minutes to avoid server costs";
     }
     else if (strpos($a, 'define ') !== false)
     {
@@ -122,15 +123,6 @@
             return $x[0];
         }
         $end = get($contents,'<plaintext>','</plaintext>');
-    }
-    else if (strpos($a, 'school') !== false)
-    {
-        $end = "CMS has cancelled school today, February 17, 2015 as well as tomorrow, February 18";
-    }
-            
-    else
-    {
-        $end = "Oops something went wrong";
     }
     function calculate_string( $mathString )    {
         $mathString = trim($mathString);     // trim white spaces
