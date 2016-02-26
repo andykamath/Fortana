@@ -28,6 +28,10 @@
     {
         $end = "Swag can be seen in Andy Kamath. No further explanation needed";
     }
+    else if(strpos($a, 'commands') !== false)
+    {
+        $end = "'Define word'\n'Weather'\n'Calc 5+5'\n'Who is George Washington'\n'What is a virus'";
+    }
     else if (strpos($a, 'weather') !== false)
     {
         $city = substr($end, 11);
